@@ -1,0 +1,176 @@
+package com.sterp.multitenant.tenant.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import com.sterp.multitenant.tenant.modules.entity.Roles;
+
+@Entity
+@Table(name = "user")
+public class UserEntity implements Serializable {
+	private static final long serialVersionUID = -4851032432869845244L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String uuid;
+	@NotNull
+	@NotEmpty(message = "Username is required.")
+	@Column(nullable = false, unique = true)
+	private String username;
+	@NotEmpty
+	private String password;
+	@NotNull
+	@NotEmpty
+	@Email(message = "invalid email address.")
+	private String email;
+	@NotNull
+	private Long mobile;
+	@Column(name = "password_expiry")
+	private Integer passwordExpiry;
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name = "status")
+	private StatusEnum status;
+
+	@Column(name = "created_at")
+	private Date createdAt;
+
+	@Column(name = "modified_at")
+	private Date modifiedAt;
+
+	@Column(name = "company_id")
+	private Integer companyId;
+
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name = "irb_user_authority", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "authority_id") })
+	private Set<Authority> authorities = new HashSet<>();
+
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "role_id")
+	Roles roles;
+
+	public Roles getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Roles roles) {
+		this.roles = roles;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public StatusEnum getStatus() {
+		return status;
+	}
+
+	public Set<Authority> getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(Set<Authority> authorities) {
+		this.authorities = authorities;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Long getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(Long mobile) {
+		this.mobile = mobile;
+	}
+
+	public Integer getPasswordExpiry() {
+		return passwordExpiry;
+	}
+
+	public void setPasswordExpiry(Integer passwordExpiry) {
+		this.passwordExpiry = passwordExpiry;
+	}
+
+	public Date getModifiedAt() {
+		return modifiedAt;
+	}
+
+	public void setModifiedAt(Date modifiedAt) {
+		this.modifiedAt = modifiedAt;
+	}
+
+	public Integer getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(Integer companyId) {
+		this.companyId = companyId;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public void setStatus(StatusEnum status) {
+		this.status = status;
+	}
+
+}

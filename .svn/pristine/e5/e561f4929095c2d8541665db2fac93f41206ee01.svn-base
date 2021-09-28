@@ -1,0 +1,12 @@
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/FixedDocumentTypeRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/DocumentFolderRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/FixedDocumentTypeModuleMappingRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/FixedDocumentTypeDataRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/DocumentContentRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/service/impl/FileStorageUploadServiceImpl.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/service/DocumentUploadService.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/utils/DocumentFolderUtils.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/service/impl/DocumentUploadServiceImpl.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/DocumentsRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/repository/DocumentVersionRepository.java
+/home/developer/projects/9195/test/HyperCRM_test/Beckend - Client Application/ERP DEV/STERP-UploadUtility/src/main/java/com/sterp/multitenant/tenant/uploadutility/utils/FileHashingMD.java

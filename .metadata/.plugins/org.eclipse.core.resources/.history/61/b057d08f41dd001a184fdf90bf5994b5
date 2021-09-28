@@ -1,0 +1,18 @@
+package com.sterp.multitenant.tenant.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.sterp.multitenant.tenant.dto.UserDTO;
+import com.sterp.multitenant.tenant.entity.UserEntity;
+
+public interface UserService extends UserDetailsService {
+
+	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+
+	UserDTO getUser(String username);
+
+	UserEntity getUserById(long userId);
+
+}

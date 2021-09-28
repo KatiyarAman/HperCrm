@@ -1,0 +1,18 @@
+package com.sterp.multitenant.tenant.company.service;
+
+import java.util.Map;
+
+import com.sterp.multitenant.tenant.company.entity.Company;
+
+public interface CompanyService {
+	public Long getCount();
+
+	public Map<String, Object> addOrUpdateCompany(Company company);
+
+	public Map<String, Object> getActiveConpanies();
+
+	public Map<String, Object> getCompnayById(Long id);
+
+	public Map<String, Object> getCompanyList();
+
+}

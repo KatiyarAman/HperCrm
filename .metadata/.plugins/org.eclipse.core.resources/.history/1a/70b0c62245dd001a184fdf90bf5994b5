@@ -1,0 +1,37 @@
+
+@RestController
+@RequestMapping("users")
+public class UserController {
+
+	@Autowired
+	private UserService userService;
+	
+	@GetMapping
+	public String getUser() {
+		return "get user was called";
+	}
+
+	@PostMapping
+	public String createUser() {
+		return "create user was called";
+	}
+	
+	@PutMapping(value = "/{userName}/{oldPassword}/{newPassword}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> updateUser(@PathVariable("userName") String userName
+			,@PathVariable("oldPassword") String oldPassword,@PathVariable("newPassword") String newPassword) {
+		return ResponseEntity.ok(this.userService.updateUser(userName,newPassword,oldPassword));
+	}
+	
+	
+	@PutMapping(value = "/defaultpassword/{userName}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> updateUserIsFirstLogin(@PathVariable("userName") String userName) {
+		return ResponseEntity.ok(this.userService.updateUserIsFirstLogin(userName));
+	}
+	
+	
+	@RequestMapping(value = { "/usersitelistmapproject" }, method = {
+			org.springframework.web.bind.annotation.RequestMethod.GET }, produces = { "application/json" })
+	public ResponseEntity<Map<String, Object>> getUsersSiteListMappedToProjects(@RequestParam Map<String, Object> params) {
+		return ResponseEntity.ok(this.userService.getUsersSiteListMappedToProjects(params.get("username").toString()));
+		
+	}
